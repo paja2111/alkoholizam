@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kviz znanja - Alkoholizam</title>
+    <link rel="stylesheet" href="projekatcss.css">
+</head>
+
+<body>
+    <header>
+        <h1>Kviz znanja o alkoholizmu</h1>
+        <nav>
+            <a href="cetvrta-ali-peta-stranica.html" class="previous">&laquo; Prethodna stranica</a>
+            <a href="pocetnastrana.html">Početna</a>
+            <a href="druga-stranica.html">Osobine alkoholizma</a>
+            <a href="treca-stranica.html">Posledice alkoholizma</a>
+            <a href="cetvrta-ali-peta-stranica.html">Rešenje problema</a>
+            <a href="cetvrta-stranica.html"class="current-menu-item">Kviz znanja</a>
+
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Testirajte svoje znanje o alkoholizmu</h2>
+            <form id="quizForm">
+                <p><strong>Pitanje 1:</strong> Šta karakteriše alkoholizam?</p>
+                <label>
+                    <input type="radio" name="q1" value="true"> a) Gubitak kontrole nad konzumiranjem alkohola
+                </label><br>
+                <label>
+                    <input type="radio" name="q1" value="false"> b) Pojačan apetit
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="false"> c) Pojačavanje moždane aktivnosti
+                </label>
+
+                <p><strong>Pitanje 2:</strong> Koja zavisnost nastaje kod alkoholizma i dovodi do tolerancije?</p>
+                <label>
+                    <input type="radio" name="q2" value="true"> a) Fizička zavisnost
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="false"> b) Emocionalna zavisnost
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="false"> c) Intelektualna zavisnost
+                </label>
+
+                <p><strong>Pitanje 3:</strong> Koje su posledice alkoholizma po organizam?</p>
+                <label>
+                    <input type="radio" name="q3" value="false"> a) Poboljšanje funkcije jetre
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="true"> b) Oštećenje jetre, srčani problemi i dr.
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="false"> c) Povećana snaga mišića
+                </label>
+
+                <p><strong>Pitanje 4:</strong> Koje su posledice alkoholizma po okruženje?</p>
+                <label>
+                    <input type="radio" name="q4" value="false"> a) Finansijski prosperitet
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="true"> b) Raspad porodičnih odnosa
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="false"> c) Jačanje društvenih mreža
+                </label>
+
+                <p><strong>Pitanje 5:</strong> Kako se može rešiti problem alkoholizma?</p>
+                <label>
+                    <input type="radio" name="q5" value="false"> a) Isključivo uz terapiju
+                </label>
+                <label>
+                    <input type="radio" name="q5" value="true"> b) Terapijom, podrškom porodice i društva i promenom načina života
+                </label><br>
+                <label>
+                    <input type="radio" name="q5" value="false"> c) Konzumiranjem još veće količine vinjaka
+                </label>
+<br><br><br>
+                <button type="button" onclick="checkAnswers()">Proveri odgovore!</button>
+            </form>
+
+            <p id="result"></p>
+        </section>
+    </main>
+
+    <script>
+        function checkAnswers() {
+            var correctAnswers = 0;
+
+            var q1 = document.querySelectorAll('input[name="q1"]:checked');
+            var q2 = document.querySelectorAll('input[name="q2"]:checked');
+            var q3 = document.querySelectorAll('input[name="q3"]:checked');
+            var q4 = document.querySelectorAll('input[name="q4"]:checked');
+            var q5 = document.querySelectorAll('input[name="q5"]:checked');
+
+            if (q1.length === 1 && q1[0].value === "true") {
+                correctAnswers++;
+            }
+
+            if (q2.length === 1 && q2[0].value === "true") {
+                correctAnswers++;
+            }
+            
+            if (q3.length === 1 && q3[0].value === "true") {
+                correctAnswers++;
+            }
+
+            if (q4.length === 1 && q4[0].value === "true") {
+                correctAnswers++;
+            }
+            
+            if (q5.length === 1 && q5[0].value === "true") {
+                correctAnswers++;
+            }
+
+            var result = "Osvojili ste " + correctAnswers + " od 5 poena.";
+
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>
